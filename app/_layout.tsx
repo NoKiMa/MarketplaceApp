@@ -1,24 +1,41 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { Stack } from "expo-router";
+import { Provider } from "react-redux";
+import { store } from "../src/presentation/store/configureStore";
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <Provider store={store}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
+        <Stack.Screen
+          name="index"
+          options={{
+            title: "Marketplace",
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="ProductListScreen"
+          options={{
+            title: "Products",
+            headerShown: true,
+            headerBackTitle: "Home",
+          }}
+        />
+        <Stack.Screen
+          name="ProductDetailsScreen"
+          options={{
+            title: "Product Details",
+            headerBackTitle: "Back",
+          }}
+        />
+        <Stack.Screen
+          name="CartScreen"
+          options={{
+            title: "Shopping Cart",
+            headerBackTitle: "Back",
+          }}
+        />
       </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    </Provider>
   );
 }
