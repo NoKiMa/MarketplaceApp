@@ -1,7 +1,7 @@
 import { Stack } from "expo-router";
 import { Provider } from "react-redux";
 import { store } from "../src/presentation/store/configureStore";
-import { SCREENS } from "@/src/utils/const";
+import { SCREENS } from "../src/utils/const";
 
 export default function RootLayout() {
   return (

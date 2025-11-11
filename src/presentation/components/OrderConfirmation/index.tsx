@@ -4,7 +4,7 @@ import { useLocalSearchParams, useNavigation } from 'expo-router';
 import React from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
 import { RootStackParamList } from '../../navigation/types';
-import { SCREENS } from '@/src/utils/const';
+import { SCREENS } from '../../../utils/const';
 
 type OrderConfirmationScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'OrderConfirmationScreen'>;
 

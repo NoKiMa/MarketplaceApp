@@ -1,4 +1,4 @@
-import ProductList from "@/src/presentation/components/ProductList";
+import ProductList from "../src/presentation/components/ProductList";
 
 export default function ProductListScreen() { 
   return (

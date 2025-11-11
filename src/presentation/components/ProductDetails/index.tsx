@@ -1,35 +1,48 @@
-import { Ionicons } from '@expo/vector-icons';
-import { useLocalSearchParams, useNavigation } from 'expo-router';
-import React, { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, Alert, Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
-import { mockProductApi } from '../../../data/api/mockProductApi';
-import { Product } from '../../../domain/models/Product';
-import { RootState } from '../../store/configureStore';
-import { addToCart } from '../../store/slices/cartSlice';
-import { SCREENS } from '@/src/utils/const';
+import {Ionicons} from '@expo/vector-icons';
+import {useLocalSearchParams, useNavigation} from 'expo-router';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
+import {
+  ActivityIndicator,
+  Alert,
+  Dimensions,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import ProductImage from '../ProductImage';
+import {useDispatch, useSelector} from 'react-redux';
+import {mockProductApi} from '../../../data/api/mockProductApi';
+import {Product} from '../../../domain/models/Product';
+import {RootState} from '../../store/configureStore';
+import {addToCart} from '../../store/slices/cartSlice';
+import {SCREENS} from '../../../utils/const';
 
-const { width } = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 
 const ProductDetails = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  const { productId } = useLocalSearchParams<{ productId: string }>();
+  const {productId} = useLocalSearchParams<{productId: string}>();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const cartItems = useSelector((state: RootState) => state.cart.items);
-  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const cartItemCount = useMemo(
+    () => cartItems.reduce((total, item) => total + item.quantity, 0),
+    [cartItems],
+  );
 
   // Set up header options
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.cartIconContainer}
-          onPress={() => navigation.navigate(SCREENS.Cart)}
-        >
+          onPress={() => navigation.navigate(SCREENS.Cart)}>
           <Ionicons name="cart-outline" size={24} color="#000" />
           {cartItemCount > 0 && (
             <View style={styles.cartBadge}>
@@ -62,31 +75,42 @@ const ProductDetails = () => {
     loadProduct();
   }, [productId]);
 
-  const handleQuantityChange = (increment: number) => {
-    setQuantity(prev => {
-      const newQuantity = prev + increment;
-      return newQuantity < 1 ? 1 : newQuantity > (product?.stock || 1) ? prev : newQuantity;
-    });
-  };
+  const handleQuantityChange = useCallback(
+    (increment: number) => {
+      setQuantity(prev => {
+        const newQuantity = prev + increment;
+        return newQuantity < 1
+          ? 1
+          : newQuantity > (product?.stock || 1)
+          ? prev
+          : newQuantity;
+      });
+    },
+    [product?.stock],
+  );
 
   const handleAddToCart = useCallback(() => {
     if (product) {
-      dispatch(addToCart({ ...product, quantity }));
-      Alert.alert(
-        'Added to Cart',
-        `${quantity} ${product.name} has been added to your cart.`,
-        [
-          {
-            text: 'Continue Shopping',
-            style: 'cancel',
-            onPress: () => navigation.navigate(SCREENS.ProductList)
-           },
-          { 
-            text: 'View Cart', 
-            onPress: () => navigation.navigate(SCREENS.Cart) 
-          }
-        ]
-      );
+      try {
+        dispatch(addToCart({product, quantity}));
+        Alert.alert(
+          'Added to Cart',
+          `${quantity} ${product.name} has been added to your cart.`,
+          [
+            {
+              text: 'Continue Shopping',
+              style: 'cancel',
+              onPress: () => navigation.navigate(SCREENS.ProductList),
+            },
+            {
+              text: 'View Cart',
+              onPress: () => navigation.navigate(SCREENS.Cart),
+            },
+          ],
+        );
+      } catch (error) {
+        console.error('Failed to add product to cart:', error);
+      }
     }
   }, [product, quantity, dispatch, navigation]);
 
@@ -103,10 +127,9 @@ const ProductDetails = () => {
       <View style={[styles.container, styles.centerContent]}>
         <Ionicons name="alert-circle-outline" size={48} color="#999" />
         <Text style={styles.notFoundText}>Product not found</Text>
-        <TouchableOpacity 
+        <TouchableOpacity
           style={styles.backButton}
-          onPress={() => navigation.goBack()}
-        >
+          onPress={() => navigation.goBack()}>
           <Text style={styles.backButtonText}>Go Back</Text>
         </TouchableOpacity>
       </View>
@@ -118,20 +141,19 @@ const ProductDetails = () => {
       <ScrollView>
         {/* Product Images */}
         <View style={styles.imageContainer}>
-          <Image 
-            source={{ uri: product.images[currentImageIndex] }} 
+          <ProductImage
+            uri={product.images[currentImageIndex]}
             style={styles.productImage}
-            resizeMode="contain"
           />
           {product.images.length > 1 && (
             <View style={styles.imagePagination}>
               {product.images.map((_, index) => (
-                <View 
-                  key={index} 
+                <View
+                  key={index}
                   style={[
                     styles.paginationDot,
-                    index === currentImageIndex && styles.paginationDotActive
-                  ]} 
+                    index === currentImageIndex && styles.paginationDotActive,
+                  ]}
                 />
               ))}
             </View>
@@ -142,13 +164,15 @@ const ProductDetails = () => {
         <View style={styles.detailsContainer}>
           <Text style={styles.brand}>{product.brand}</Text>
           <Text style={styles.title}>{product.name}</Text>
-          
+
           <View style={styles.priceRatingContainer}>
             <Text style={styles.price}>${product.price.toFixed(2)}</Text>
             <View style={styles.ratingContainer}>
               <Ionicons name="star" size={16} color="#FFD700" />
               <Text style={styles.ratingText}>{product.rating.toFixed(1)}</Text>
-              <Text style={styles.reviewCount}>({Math.floor(Math.random() * 100)} reviews)</Text>
+              <Text style={styles.reviewCount}>
+                ({Math.floor(Math.random() * 100)} reviews)
+              </Text>
             </View>
           </View>
 
@@ -161,18 +185,16 @@ const ProductDetails = () => {
           {/* Quantity Selector */}
           <Text style={styles.sectionTitle}>Quantity</Text>
           <View style={styles.quantityContainer}>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.quantityButton}
-              onPress={() => handleQuantityChange(-1)}
-            >
+              onPress={() => handleQuantityChange(-1)}>
               <Ionicons name="remove" size={20} color="#333" />
             </TouchableOpacity>
             <Text style={styles.quantityText}>{quantity}</Text>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.quantityButton}
               onPress={() => handleQuantityChange(1)}
-              disabled={quantity >= product.stock}
-            >
+              disabled={quantity >= product.stock}>
               <Ionicons name="add" size={20} color="#333" />
             </TouchableOpacity>
             <Text style={styles.stockText}>{product.stock} available</Text>
@@ -199,11 +221,13 @@ const ProductDetails = () => {
 
       {/* Add to Cart Button */}
       <View style={styles.footer}>
-        <TouchableOpacity 
-          style={[styles.addToCartButton, product.stock === 0 && styles.addToCartButtonDisabled]}
+        <TouchableOpacity
+          style={[
+            styles.addToCartButton,
+            product.stock === 0 && styles.addToCartButtonDisabled,
+          ]}
           onPress={handleAddToCart}
-          disabled={product.stock === 0}
-        >
+          disabled={product.stock === 0}>
           <Text style={styles.addToCartButtonText}>
             {product.stock > 0 ? 'Add to Cart' : 'Out of Stock'}
           </Text>
@@ -267,7 +291,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   imageContainer: {
-    marginTop:15,
+    marginTop: 15,
     width: '100%',
     height: width * 0.8,
     backgroundColor: '#f8f8f8',
@@ -280,7 +304,7 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 10,
     overflow: 'hidden',
-  },  
+  },
   imagePagination: {
     position: 'absolute',
     bottom: 16,

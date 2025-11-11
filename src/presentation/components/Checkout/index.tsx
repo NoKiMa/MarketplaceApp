@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { OrderRepositoryImpl } from '../../../data/repositories/OrderRepositoryImpl';
 import { RootStackParamList } from '../../navigation/types';
 import { clearCart, selectCartItems, selectTotalPrice } from '../../store/slices/cartSlice';
-import {SCREENS} from '@/src/utils/const';
+import { SCREENS } from '../../../utils/const';
 type CheckoutScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'CheckoutScreen'>;
 
 const Checkout = () => {

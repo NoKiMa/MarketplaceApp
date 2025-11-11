@@ -1,4 +1,4 @@
-import ProductDetails from "@/src/presentation/components/ProductDetails";
+import ProductDetails from "../src/presentation/components/ProductDetails";
 
 export default function ProductDetailsScreen() { 
   return (

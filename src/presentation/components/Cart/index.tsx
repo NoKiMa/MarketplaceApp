@@ -1,3 +1,4 @@
+import { SCREENS } from '../../../utils/const';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -11,9 +12,8 @@ import {
   View,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import { removeFromCart, selectCartItems, selectTotalItems, selectTotalPrice, updateQuantity } from '../../store/slices/cartSlice';
 import { CartItem } from '../CartItem';
-import { removeFromCart, selectCartItems, selectTotalItems, selectTotalPrice, updateQuantity } from '@/src/presentation/store/slices/cartSlice';
-import {SCREENS} from '@/src/utils/const';
 export default function CartScreen() {
   const navigation = useNavigation();
   const dispatch = useDispatch();

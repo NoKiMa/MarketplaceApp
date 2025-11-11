@@ -18,7 +18,7 @@ import { mockProductApi } from '../../../data/api/mockProductApi';
 import { Product, ProductFilter, SortOrder } from '../../../domain/models/Product';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/configureStore';
-import {SCREENS} from '@/src/utils/const';
+import {SCREENS} from '../../../utils/const';
 const ITEMS_PER_PAGE = 10;
 
 // Product Card Component
