@@ -2,7 +2,6 @@ import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { CartItem as CartItemType } from '../../../domain/models/Product';
-
 interface CartItemProps {
   item: CartItemType;
   onIncrease: (id: string) => void;

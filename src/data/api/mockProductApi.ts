@@ -76,7 +76,7 @@ const generateMockProducts = (count: number): Product[] => {
     const category = categories[Math.floor(Math.random() * categories.length)];
     mockProducts.push({
       id: uuidv4(),
-      name: `Product ${i}`,
+      name: `${category} ${i}`,
       description: `This is a description for Product ${i}. It's a great ${category.toLowerCase()} item.`,
       price: Math.floor(Math.random() * 1000) + 10,
       rating: Number((Math.random() * 5).toFixed(1)),
@@ -103,12 +103,12 @@ export const mockProductApi = {
 
     // Apply search filter
     if (filter.searchQuery) {
-      const searchQuery = filter.searchQuery.toLowerCase();
-      filteredProducts = filteredProducts.filter(
-        product => 
-          product.name.toLowerCase().includes(searchQuery) ||
-          product.description.toLowerCase().includes(searchQuery)
-      );
+      const searchQuery = filter.searchQuery.toLowerCase().trim();
+      filteredProducts = filteredProducts.filter(product => {
+        // Split product name into words and check if any word starts with the search query
+        const nameWords = product.name.toLowerCase().split(/\s+/);
+        return nameWords.some(word => word.startsWith(searchQuery));
+      });
     }
 
     // Apply category filter

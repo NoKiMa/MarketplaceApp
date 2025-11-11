@@ -1,12 +1,13 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import React, { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
+import { ActivityIndicator, Alert, Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../store/slices/cartSlice';
-import { RootState } from '../../store/configureStore';
 import { mockProductApi } from '../../../data/api/mockProductApi';
 import { Product } from '../../../domain/models/Product';
+import { RootState } from '../../store/configureStore';
+import { addToCart } from '../../store/slices/cartSlice';
+import { SCREENS } from '@/src/utils/const';
 
 const { width } = Dimensions.get('window');
 
@@ -27,7 +28,7 @@ const ProductDetails = () => {
       headerRight: () => (
         <TouchableOpacity 
           style={styles.cartIconContainer}
-          onPress={() => navigation.navigate('CartScreen' as never)}
+          onPress={() => navigation.navigate(SCREENS.Cart)}
         >
           <Ionicons name="cart-outline" size={24} color="#000" />
           {cartItemCount > 0 && (
@@ -75,10 +76,14 @@ const ProductDetails = () => {
         'Added to Cart',
         `${quantity} ${product.name} has been added to your cart.`,
         [
-          { text: 'Continue Shopping', style: 'cancel' },
+          {
+            text: 'Continue Shopping',
+            style: 'cancel',
+            onPress: () => navigation.navigate(SCREENS.ProductList)
+           },
           { 
             text: 'View Cart', 
-            onPress: () => navigation.navigate('CartScreen' as never) 
+            onPress: () => navigation.navigate(SCREENS.Cart) 
           }
         ]
       );
@@ -236,13 +241,13 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   cartIconContainer: {
-    marginRight: 15,
+    marginRight: 10,
     flexDirection: 'row',
   },
   cartBadge: {
     position: 'absolute',
-    right: -8,
-    top: -5,
+    right: -2,
+    top: -2,
     backgroundColor: '#FF3B30',
     borderRadius: 9,
     width: 18,
@@ -424,8 +429,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#a5a5a5',
     opacity: 0.6,
   },
-  addToCartButtonText: {},
-  addToCartText: {
+  addToCartButtonText: {
     color: '#fff',
     fontSize: 16,
     fontWeight: '600',

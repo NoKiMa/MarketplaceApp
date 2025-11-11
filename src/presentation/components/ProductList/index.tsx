@@ -16,6 +16,9 @@ import {
 } from 'react-native';
 import { mockProductApi } from '../../../data/api/mockProductApi';
 import { Product, ProductFilter, SortOrder } from '../../../domain/models/Product';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/configureStore';
+import {SCREENS} from '@/src/utils/const';
 const ITEMS_PER_PAGE = 10;
 
 // Product Card Component
@@ -57,6 +60,28 @@ export default function ProductList() {
   const [categories, setCategories] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
   const navigation = useNavigation();
+    const cartItems = useSelector((state: RootState) => state.cart.items);
+  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+    useEffect(() => {
+      navigation.setOptions({
+        headerRight: () => (
+          <TouchableOpacity 
+            style={styles.cartIconContainer}
+            onPress={() => navigation.navigate(SCREENS.Cart)}
+          >
+            <Ionicons name="cart-outline" size={24} color="#000" />
+            {cartItemCount > 0 && (
+              <View style={styles.cartBadge}>
+                <Text style={styles.cartBadgeText}>
+                  {cartItemCount > 9 ? '9+' : cartItemCount}
+                </Text>
+              </View>
+            )}
+          </TouchableOpacity>
+        ),
+      });
+    }, [navigation, cartItemCount]);
 
   useEffect(() => {
     loadProducts(true);
@@ -68,7 +93,7 @@ export default function ProductList() {
 
   const handleProductPress = useCallback(
     (product: Product) => {
-      navigation.navigate('ProductDetailsScreen', {productId: product.id});
+      navigation.navigate( SCREENS.ProductDetails, {productId: product.id});
     },
     [navigation],
   );
@@ -161,18 +186,8 @@ export default function ProductList() {
     loadCategories();
   }, []);
 
-  // Rest of the component code remains the same as before...
-  // [Previous component logic here...]
-
   return (
     <View style={styles.container}>
-      {/* Header with back button */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={handleGoBack} style={styles.backButton}>
-          <Ionicons name="arrow-back" size={24} color="#007AFF" />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>Products</Text>
-      </View>
       {/* Search and filter UI */}
       <View style={styles.searchContainer}>
         <TextInput
@@ -259,7 +274,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     paddingTop: 5,
-    marginTop: 20,
   },
   header: {
     flexDirection: 'row',
@@ -395,5 +409,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f0',
     borderRadius: 8,
     alignItems: 'center',
+  },
+  cartIconContainer: {
+    marginRight: 10,
+    flexDirection: 'row',
+  },
+  cartBadge: {
+    position: 'absolute',
+    right: -2,
+    top: -2,
+    backgroundColor: '#FF3B30',
+    borderRadius: 9,
+    width: 18,
+    height: 18,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cartBadgeText: {
+    color: 'white',
+    fontSize: 10,
+    fontWeight: 'bold',
   },
 });
