@@ -1,6 +1,563 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1762879933417" clover="3.2.0">
-  <project timestamp="1762879933417" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1762885364681" clover="3.2.0">
+  <project timestamp="1762885364682" name="All files">
+    <metrics statements="398" coveredstatements="0" conditionals="147" coveredconditionals="0" methods="170" coveredmethods="0" elements="715" coveredelements="0" complexity="0" loc="398" ncloc="398" packages="19" files="34" classes="34"/>
+    <package name="MarketplaceApp">
+      <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="eslint.config.js" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/eslint.config.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="jest.config.js" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/jest.config.js">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.app">
+      <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <file name="CartScreen.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/app/CartScreen.tsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="CheckoutScreen.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/app/CheckoutScreen.tsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="OrderConfirmationScreen.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/app/OrderConfirmationScreen.tsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="ProductDetailsScreen.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/app/ProductDetailsScreen.tsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="ProductListScreen.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/app/ProductListScreen.tsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+      </file>
+      <file name="_layout.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/app/_layout.tsx">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/app/index.tsx">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.contexts">
+      <metrics statements="32" coveredstatements="0" conditionals="11" coveredconditionals="0" methods="17" coveredmethods="0"/>
+      <file name="CartContext.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/contexts/CartContext.tsx">
+        <metrics statements="32" coveredstatements="0" conditionals="11" coveredconditionals="0" methods="17" coveredmethods="0"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="91" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.data.api">
+      <metrics statements="54" coveredstatements="0" conditionals="18" coveredconditionals="0" methods="26" coveredmethods="0"/>
+      <file name="mockOrderApi.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/data/api/mockOrderApi.ts">
+        <metrics statements="15" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="10" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+      </file>
+      <file name="mockProductApi.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/data/api/mockProductApi.ts">
+        <metrics statements="39" coveredstatements="0" conditionals="16" coveredconditionals="0" methods="16" coveredmethods="0"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="97" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="105" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="106" count="0" type="stmt"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="110" count="0" type="stmt"/>
+        <line num="115" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="122" count="0" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="124" count="0" type="stmt"/>
+        <line num="126" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="127" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="134" count="0" type="stmt"/>
+        <line num="136" count="0" type="stmt"/>
+        <line num="146" count="0" type="stmt"/>
+        <line num="147" count="0" type="stmt"/>
+        <line num="148" count="0" type="stmt"/>
+        <line num="156" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="158" count="0" type="stmt"/>
+        <line num="162" count="0" type="stmt"/>
+        <line num="163" count="0" type="stmt"/>
+        <line num="164" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.data.repositories">
+      <metrics statements="14" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="11" coveredmethods="0"/>
+      <file name="OrderRepositoryImpl.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/data/repositories/OrderRepositoryImpl.ts">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+      </file>
+      <file name="ProductRepositoryImpl.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/data/repositories/ProductRepositoryImpl.ts">
+        <metrics statements="9" coveredstatements="0" conditionals="3" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/data/repositories/index.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.domain.models">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Product.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/domain/models/Product.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.domain.repositories">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="BaseRepository.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/domain/repositories/BaseRepository.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="OrderRepository.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/domain/repositories/OrderRepository.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="ProductRepository.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/domain/repositories/ProductRepository.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.components.Cart">
+      <metrics statements="35" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="14" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/components/Cart/index.tsx">
+        <metrics statements="35" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="14" coveredmethods="0"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="74" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.components.CartItem">
+      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/components/CartItem/index.tsx">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.components.Checkout">
+      <metrics statements="38" coveredstatements="0" conditionals="28" coveredconditionals="0" methods="12" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/components/Checkout/index.tsx">
+        <metrics statements="38" coveredstatements="0" conditionals="28" coveredconditionals="0" methods="12" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="8"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="90" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="119" count="0" type="stmt"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="149" count="0" type="stmt"/>
+        <line num="156" count="0" type="stmt"/>
+        <line num="187" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.components.OrderConfirmation">
+      <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/components/OrderConfirmation/index.tsx">
+        <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.components.ProductDetails">
+      <metrics statements="48" coveredstatements="0" conditionals="30" coveredconditionals="0" methods="18" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/components/ProductDetails/index.tsx">
+        <metrics statements="48" coveredstatements="0" conditionals="30" coveredconditionals="0" methods="18" coveredmethods="0"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="82" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="93" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="107" count="0" type="stmt"/>
+        <line num="112" count="0" type="stmt"/>
+        <line num="117" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="125" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="132" count="0" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="151" count="0" type="stmt"/>
+        <line num="190" count="0" type="stmt"/>
+        <line num="196" count="0" type="stmt"/>
+        <line num="240" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.components.ProductImage">
+      <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/components/ProductImage/index.tsx">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.components.ProductList">
+      <metrics statements="76" coveredstatements="0" conditionals="33" coveredconditionals="0" methods="29" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/components/ProductList/index.tsx">
+        <metrics statements="76" coveredstatements="0" conditionals="33" coveredconditionals="0" methods="29" coveredmethods="0"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="103" count="0" type="stmt"/>
+        <line num="108" count="0" type="stmt"/>
+        <line num="109" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="110" count="0" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
+        <line num="117" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="121" count="0" type="stmt"/>
+        <line num="123" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="126" count="0" type="stmt"/>
+        <line num="127" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="129" count="0" type="stmt"/>
+        <line num="138" count="0" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="141" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="144" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="147" count="0" type="stmt"/>
+        <line num="148" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="149" count="0" type="stmt"/>
+        <line num="151" count="0" type="stmt"/>
+        <line num="154" count="0" type="stmt"/>
+        <line num="156" count="0" type="stmt"/>
+        <line num="157" count="0" type="stmt"/>
+        <line num="163" count="0" type="stmt"/>
+        <line num="164" count="0" type="stmt"/>
+        <line num="165" count="0" type="stmt"/>
+        <line num="168" count="0" type="stmt"/>
+        <line num="169" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="170" count="0" type="stmt"/>
+        <line num="174" count="0" type="stmt"/>
+        <line num="175" count="0" type="stmt"/>
+        <line num="176" count="0" type="stmt"/>
+        <line num="177" count="0" type="stmt"/>
+        <line num="181" count="0" type="stmt"/>
+        <line num="182" count="0" type="stmt"/>
+        <line num="183" count="0" type="stmt"/>
+        <line num="184" count="0" type="stmt"/>
+        <line num="186" count="0" type="stmt"/>
+        <line num="189" count="0" type="stmt"/>
+        <line num="201" count="0" type="stmt"/>
+        <line num="220" count="0" type="stmt"/>
+        <line num="235" count="0" type="stmt"/>
+        <line num="245" count="0" type="stmt"/>
+        <line num="249" count="0" type="stmt"/>
+        <line num="255" count="0" type="stmt"/>
+        <line num="262" count="0" type="stmt"/>
+        <line num="272" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.navigation">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="types.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/navigation/types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.store">
+      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="configureStore.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/store/configureStore.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+      </file>
+      <file name="hooks.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/store/hooks.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.store.sagas">
+      <metrics statements="15" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="productSaga.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/store/sagas/productSaga.ts">
+        <metrics statements="14" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+      </file>
+      <file name="rootSaga.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/store/sagas/rootSaga.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.presentation.store.slices">
+      <metrics statements="44" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="21" coveredmethods="0"/>
+      <file name="cartSlice.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/store/slices/cartSlice.ts">
+        <metrics statements="24" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="12" coveredmethods="0"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+      </file>
+      <file name="productSlice.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/presentation/store/slices/productSlice.ts">
+        <metrics statements="20" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="59" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="MarketplaceApp.src.utils">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="const.ts" path="/Users/noki/Desktop/WebstormProjects/MarketplaceApp/src/utils/const.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

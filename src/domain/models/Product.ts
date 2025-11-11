@@ -9,7 +9,6 @@ export interface Product {
   images: string[];
   createdAt: string;
   updatedAt: string;
-  quantity: number;
 }
 
 export interface CartItem extends Product {
