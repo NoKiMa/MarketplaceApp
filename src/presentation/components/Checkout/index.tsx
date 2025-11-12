@@ -1,12 +1,13 @@
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
-import { OrderRepositoryImpl } from '../../../data/repositories/OrderRepositoryImpl';
+import { OrderRequest } from '../../../domain/models/Order';
+import { SCREENS } from '../../../utils/const';
 import { RootStackParamList } from '../../navigation/types';
 import { clearCart, selectCartItems, selectTotalPrice } from '../../store/slices/cartSlice';
-import { SCREENS } from '../../../utils/const';
+import { fetchOrderStart, selectCurrentOrder, selectOrderLoading } from '../../store/slices/orderSlice';
 type CheckoutScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'CheckoutScreen'>;
 
 const Checkout = () => {
@@ -14,9 +15,10 @@ const Checkout = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
   const totalPrice = useSelector(selectTotalPrice);
-  const orderRepository = new OrderRepositoryImpl();
-  
-  const [formData, setFormData] = useState({
+  const currentOrder = useSelector(selectCurrentOrder);
+  const orderLoading = useSelector(selectOrderLoading);
+
+  const initFormData = {
     firstName: '',
     lastName: '',
     email: '',
@@ -24,9 +26,19 @@ const Checkout = () => {
     city: '',
     postalCode: '',
     country: 'United States',
-  });
+  }
+  
+  const [formData, setFormData] = useState(initFormData);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (currentOrder) {
+      dispatch(clearCart());
+      navigation.navigate(SCREENS.OrderConfirmation, { orderId: currentOrder.id });
+      setIsSubmitting(false);
+    }
+  }, [currentOrder]);
 
   const handleSubmit = async () => {
     // Form validation
@@ -43,41 +55,28 @@ const Checkout = () => {
 
     setIsSubmitting(true);
 
-    try {
-      const orderData = {
-        userId: 'user_123', // In a real app, get this from auth context
-        items: cartItems.map(item => ({
-          productId: item.id,
-          name: item.name,
-          price: item.price,
-          quantity: item.quantity
-        })),
-        shippingInfo: {
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          address: formData.address,
-          city: formData.city,
-          postalCode: formData.postalCode,
-          country: formData.country
-        },
-        totalAmount: totalPrice,
-        status: 'processing' as const
-      };
+    const orderData: OrderRequest = {
+      userId: 'user_123', // In a real app, get this from auth context
+      items: cartItems.map(item => ({
+        productId: item.id,
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity
+      })),
+      shippingInfo: {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        address: formData.address,
+        city: formData.city,
+        postalCode: formData.postalCode,
+        country: formData.country
+      },
+      totalAmount: totalPrice,
+      status: 'processing' as const
+    };
 
-      const newOrder = await orderRepository.createOrder(orderData);
-      
-      // Clear the cart after successful order
-      dispatch(clearCart());
-      
-      // Navigate to order confirmation screen with the new order ID
-      navigation.navigate(SCREENS.OrderConfirmation, { orderId: newOrder.id });
-    } catch (error) {
-      console.error('Error placing order:', error);
-      Alert.alert('Error', 'Failed to place order. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
+    dispatch(fetchOrderStart(orderData));
   };
 
   const handleInputChange = (field: keyof typeof formData, value: string) => {

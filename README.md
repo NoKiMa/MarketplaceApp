@@ -1,50 +1,151 @@
-# Welcome to your Expo app 👋
+# MarketplaceApp
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple marketplace mobile application built with Expo, React Native, TypeScript, expo-router, and Redux Toolkit + redux-saga. The goal of this README is to let a new developer clone the repo and run the app quickly in development.
 
-## Get started
+## Requirements
 
-1. Install dependencies
+- Node.js 18+ (LTS recommended)
+- npm or yarn
+- macOS with Xcode (for iOS simulator) — optional if only targeting Android
+- Android Studio with an Android Virtual Device (for Android emulator)
+- A physical device with Expo Go (optional)
 
-   ```bash
-   npm install
-   ```
+No environment variables are required.
 
-2. Start the app
+## Getting Started
 
-   ```bash
-   npx expo start
-   ```
+- **Clone the repository**
 
-In the output, you'll find options to open the app in a
+  ```bash
+  git clone https://github.com/NoKiMa/MarketplaceApp.git
+  cd MarketplaceApp
+  ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Install dependencies (choose one)**
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+  ```bash
+  npm install
+  # or
+  yarn
+  ```
 
-## Get a fresh project
+## Running (Development)
 
-When you're ready, run:
+- **Start the Metro bundler**
+
+  ```bash
+  npm start
+  # or
+  yarn start
+  ```
+
+- **Open on iOS simulator** (requires Xcode):
+
+  ```bash
+  npm run ios
+  # or
+  yarn ios
+  ```
+
+- **Open on Android emulator** (requires Android Studio):
+
+  ```bash
+  npm run android
+  # or
+  yarn android
+  ```
+
+- **Open on a physical device** using Expo Go:
+  - Scan the QR code shown in the terminal/Expo DevTools.
+
+## Scripts
+
+- Start: `npm start` | `yarn start`
+- iOS: `npm run ios` | `yarn ios`
+- Android: `npm run android` | `yarn android`
+- Lint: `npm run lint` | `yarn lint`
+- Tests: `npm test` | `yarn test`
+- Watch tests: `npm run test:watch`
+- Coverage: `npm run test:coverage`
+
+## Testing
+
+The project uses Jest and @testing-library/react-native for unit/integration tests.
 
 ```bash
-npm run reset-project
+npm test
+# or
+yarn test
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Additional scripts:
 
-## Learn more
+```bash
+npm run test:watch
+npm run test:coverage
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Linting
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+ESLint is configured via `eslint-config-expo`.
 
-## Join the community
+```bash
+npm run lint
+# or
+yarn lint
+```
 
-Join our community of developers creating universal apps.
+## Project Structure
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- `app/` — file-based routing using expo-router (`_layout.tsx`, screens)
+- `src/`
+  - `presentation/` — Redux store, slices, sagas, UI components
+  - `domain/` — models, use cases
+  - `data/` — repositories, API-related code
+  - `contexts/` — React contexts
+  - `__tests__/` — tests
+- `assets/` — images, icons, splash assets
+- `app.json` — Expo app configuration
+- `babel.config.js`, `tsconfig.json`, `jest.config.js` — tooling configs
+
+## Tech Stack
+
+- Expo SDK 54, React Native 0.81, React 19
+- expo-router (file-based navigation)
+- Redux Toolkit + redux-saga
+- TypeScript, ESLint
+- styled-components
+- Testing: Jest + Testing Library
+
+## Production Build (brief)
+
+For production builds, use EAS Build (recommended by Expo). You will need an Expo account and to configure credentials in your Expo project.
+
+- Docs: https://docs.expo.dev/build/introduction/
+- Example commands:
+
+  ```bash
+  # configure if needed
+  npx expo prebuild   # only if you move to the prebuild workflow
+
+  # build for iOS or Android in the cloud
+  npx expo build:ios     # or use EAS: npx eas build --platform ios
+  npx expo build:android # or use EAS: npx eas build --platform android
+  ```
+
+Note: This project is primarily intended for development mode; production steps are provided at a high level only.
+
+## Troubleshooting
+
+- Clear Expo cache if something looks stuck:
+
+  ```bash
+  npx expo start -c
+  ```
+
+- Ensure Xcode/Android Studio and their simulators/emulators are installed and updated.
+- If emulator/simulator does not connect, try restarting Metro, the simulator/emulator, and your device.
+
+## License
+
+MIT

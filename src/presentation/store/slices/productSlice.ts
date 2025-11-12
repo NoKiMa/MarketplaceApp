@@ -1,9 +1,8 @@
 // src/presentation/store/slices/productSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Product, ProductFilter, SortOrder } from '../../../domain/models/Product';
-import { PaginatedResponse } from '../../../domain/models/Product';
+import { PaginatedResponse, Product, ProductFilter, SortOrder } from '../../../domain/models/Product';
 
-interface ProductState {
+export interface ProductState {
   products: Product[];
   loading: boolean;
   error: string | null;

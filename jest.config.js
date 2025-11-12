@@ -14,6 +14,7 @@ module.exports = {
         'expo-modules-core',
         'react-navigation',
         '@react-navigation',
+        'react-redux',
         'uuid', 
         '@reduxjs/toolkit', 
         'immer',            

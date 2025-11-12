@@ -14,11 +14,11 @@ import {
   TouchableOpacity,
   View
 } from 'react-native';
+import { useSelector } from 'react-redux';
 import { mockProductApi } from '../../../data/api/mockProductApi';
 import { Product, ProductFilter, SortOrder } from '../../../domain/models/Product';
-import { useSelector } from 'react-redux';
+import { SCREENS } from '../../../utils/const';
 import { RootState } from '../../store/configureStore';
-import {SCREENS} from '../../../utils/const';
 const ITEMS_PER_PAGE = 10;
 
 // Product Card Component
@@ -60,7 +60,7 @@ export default function ProductList() {
   const [categories, setCategories] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
   const navigation = useNavigation();
-    const cartItems = useSelector((state: RootState) => state.cart.items);
+  const cartItems = useSelector((state: RootState) => state.cart.items);
   const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
     useEffect(() => {

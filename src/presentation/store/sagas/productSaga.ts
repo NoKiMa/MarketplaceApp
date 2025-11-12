@@ -1,12 +1,10 @@
-import { call, put, takeLatest, select } from 'redux-saga/effects';
+import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { repositories } from '../../../data/repositories';
 import {
-  fetchProductsStart,
-  fetchProductsSuccess,
   fetchProductsFailure,
-  setCategories,
+  fetchProductsSuccess,
+  setCategories
 } from '../slices/productSlice';
-import { ProductFilter } from '../../../domain/models/Product';
 
 function* fetchProductsSaga(): Generator<any, void, any> {
   try {

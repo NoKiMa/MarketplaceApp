@@ -1,0 +1,433 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart matches snapshot (empty cart) 1`] = `
+[
+  <RCTSafeAreaView
+    style={
+      {
+        "backgroundColor": "#f8f9fa",
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+          "padding": 20,
+        }
+      }
+    >
+      <Ionicons
+        color="#ccc"
+        name="cart-outline"
+        size={64}
+      />
+      <Text
+        style={
+          {
+            "color": "#666",
+            "fontSize": 16,
+            "marginBottom": 20,
+            "marginTop": 10,
+          }
+        }
+      >
+        Your cart is empty
+      </Text>
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "backgroundColor": "#007AFF",
+            "borderRadius": 8,
+            "opacity": 1,
+            "paddingHorizontal": 20,
+            "paddingVertical": 12,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "fontSize": 16,
+              "fontWeight": "600",
+            }
+          }
+        >
+          Continue Shopping
+        </Text>
+      </View>
+    </View>
+  </RCTSafeAreaView>,
+  <Text />,
+]
+`;
+
+exports[`Cart matches snapshot (with items) 1`] = `
+[
+  <RCTSafeAreaView
+    style={
+      {
+        "backgroundColor": "#f8f9fa",
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      testID="flatlist"
+    >
+      <Text>
+        Item A
+      </Text>
+      <Text>
+        50.00
+      </Text>
+      <Text>
+        2
+      </Text>
+      <Text>
+        5
+      </Text>
+      <Text
+        onPress={[Function]}
+        testID="inc-a"
+      >
+        INC
+      </Text>
+      <Text
+        onPress={[Function]}
+        testID="dec-a"
+      >
+        DEC
+      </Text>
+      <Text
+        onPress={[Function]}
+        testID="rm-a"
+      >
+        RM
+      </Text>
+      <Text>
+        Item B
+      </Text>
+      <Text>
+        30.00
+      </Text>
+      <Text>
+        1
+      </Text>
+      <Text>
+        3
+      </Text>
+      <Text
+        onPress={[Function]}
+        testID="inc-b"
+      >
+        INC
+      </Text>
+      <Text
+        onPress={[Function]}
+        testID="dec-b"
+      >
+        DEC
+      </Text>
+      <Text
+        onPress={[Function]}
+        testID="rm-b"
+      >
+        RM
+      </Text>
+      <View
+        style={
+          {
+            "backgroundColor": "#fff",
+            "borderColor": "#eee",
+            "borderRadius": 10,
+            "borderWidth": 1,
+            "marginTop": 10,
+            "padding": 15,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginBottom": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#666",
+                "fontSize": 14,
+              }
+            }
+          >
+            Subtotal (
+            3
+             items):
+          </Text>
+          <Text
+            style={
+              {
+                "fontSize": 14,
+                "fontWeight": "500",
+              }
+            }
+          >
+            $
+            130.00
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginBottom": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#666",
+                "fontSize": 14,
+              }
+            }
+          >
+            Tax (10%):
+          </Text>
+          <Text
+            style={
+              {
+                "fontSize": 14,
+                "fontWeight": "500",
+              }
+            }
+          >
+            $
+            13.00
+          </Text>
+        </View>
+        <View
+          style={
+            [
+              {
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginBottom": 8,
+              },
+              {
+                "borderTopColor": "#eee",
+                "borderTopWidth": 1,
+                "marginTop": 8,
+                "paddingTop": 8,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              {
+                "fontSize": 16,
+                "fontWeight": "600",
+              }
+            }
+          >
+            Total:
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#007AFF",
+                "fontSize": 16,
+                "fontWeight": "700",
+              }
+            }
+          >
+            $
+            143.00
+          </Text>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        {
+          "backgroundColor": "#fff",
+          "borderTopColor": "#eee",
+          "borderTopWidth": 1,
+          "bottom": 0,
+          "left": 0,
+          "padding": 15,
+          "position": "absolute",
+          "right": 0,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#007AFF",
+            "borderRadius": 8,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "opacity": 1,
+            "padding": 15,
+          }
+        }
+      >
+        <Ionicons
+          color="#fff"
+          name="arrow-back"
+          size={20}
+          style={
+            {
+              "marginRight": 10,
+            }
+          }
+        />
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "marginRight": 10,
+            }
+          }
+        >
+          Continue Shopping
+        </Text>
+      </View>
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#007AFF",
+            "borderRadius": 8,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+            "marginBottom": 10,
+            "opacity": 1,
+            "padding": 15,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "marginRight": 10,
+            }
+          }
+        >
+          Proceed to Checkout
+        </Text>
+        <Ionicons
+          color="#fff"
+          name="arrow-forward"
+          size={20}
+          style={
+            {
+              "marginLeft": 5,
+            }
+          }
+        />
+      </View>
+    </View>
+  </RCTSafeAreaView>,
+  <Text />,
+]
+`;

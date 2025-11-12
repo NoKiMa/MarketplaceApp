@@ -1,33 +1,49 @@
 import { v4 as uuidv4 } from 'uuid';
-import { Order, OrderResponse, CreateOrderRequest, OrderStatus } from '../../domain/models/Order';
+import { Order, OrderRequest, OrderResponse } from '../../domain/models/Order';
 
 // In-memory storage for orders
 let orders: Order[] = [];
 
 export const mockOrderApi = {
-  async createOrder(orderData: CreateOrderRequest): Promise<OrderResponse> {
+  async createOrder(orderData: OrderRequest): Promise<OrderResponse> {
     try {
       // Simulate API delay
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
+      const subtotal = orderData.totalAmount;
+      const shippingCost = 0;
+      const tax = 0;
+      const total = subtotal + shippingCost + tax;
+
       const newOrder: Order = {
         id: `order_${uuidv4().substring(0, 8)}`,
         userId: orderData.userId,
         items: orderData.items,
-        total: orderData.items.reduce((sum, item) => sum + (item.price * item.quantity), 0),
-        status: 'pending',
-        shippingAddress: orderData.shippingAddress,
-        paymentMethod: orderData.paymentMethod,
+        shippingAddress: {
+          firstName: orderData.shippingInfo.firstName,
+          lastName: orderData.shippingInfo.lastName,
+          address: orderData.shippingInfo.address,
+          city: orderData.shippingInfo.city,
+          postalCode: orderData.shippingInfo.postalCode,
+          country: orderData.shippingInfo.country,
+          email: orderData.shippingInfo.email,
+        },
+        subtotal,
+        shippingCost,
+        tax,
+        total,
+        status: orderData.status,
+        paymentMethod: 'card',
+        paymentStatus: 'pending',
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       };
-      
+
       orders.push(newOrder);
-      
+
       return {
         success: true,
-        orderId: newOrder.id,
-        message: 'Order placed successfully!',
+        order: newOrder,
       };
     } catch (error) {
       console.error('Error creating order:', error);

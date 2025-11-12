@@ -1,0 +1,401 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkout matches snapshot (cart with items) 1`] = `
+[
+  <View
+    style={
+      {
+        "backgroundColor": "#fff",
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView
+      style={
+        {
+          "padding": 16,
+        }
+      }
+    >
+      <View>
+        <Text
+          style={
+            {
+              "fontSize": 18,
+              "fontWeight": "bold",
+              "marginBottom": 8,
+            }
+          }
+        >
+          Order Summary
+        </Text>
+        <View
+          style={
+            {
+              "borderBottomColor": "#eee",
+              "borderBottomWidth": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "paddingVertical": 8,
+            }
+          }
+        >
+          <Text>
+            Phone
+             x 
+            2
+          </Text>
+          <Text>
+            $
+            200.00
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "borderBottomColor": "#ddd",
+              "borderBottomWidth": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginBottom": 16,
+              "paddingVertical": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Total:
+          </Text>
+          <Text
+            style={
+              {
+                "fontSize": 18,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            $
+            200.00
+          </Text>
+        </View>
+        <Text
+          style={
+            {
+              "fontSize": 18,
+              "fontWeight": "bold",
+              "marginBottom": 8,
+            }
+          }
+        >
+          Shipping Information
+        </Text>
+        <Text
+          style={
+            {
+              "fontSize": 10,
+              "fontWeight": "bold",
+              "marginBottom": 4,
+            }
+          }
+        >
+          First Name
+        </Text>
+        <TextInput
+          onChangeText={[Function]}
+          placeholder="First Name"
+          style={
+            [
+              {
+                "borderColor": "#ddd",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "fontSize": 16,
+                "marginBottom": 12,
+                "padding": 12,
+              },
+              {
+                "borderColor": "red",
+              },
+            ]
+          }
+          value=""
+        />
+        <Text
+          style={
+            {
+              "fontSize": 10,
+              "fontWeight": "bold",
+              "marginBottom": 4,
+            }
+          }
+        >
+          Last Name
+        </Text>
+        <TextInput
+          onChangeText={[Function]}
+          placeholder="Last Name"
+          style={
+            [
+              {
+                "borderColor": "#ddd",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "fontSize": 16,
+                "marginBottom": 12,
+                "padding": 12,
+              },
+              {
+                "borderColor": "red",
+              },
+            ]
+          }
+          value=""
+        />
+        <Text
+          style={
+            {
+              "fontSize": 10,
+              "fontWeight": "bold",
+              "marginBottom": 4,
+            }
+          }
+        >
+          Email
+        </Text>
+        <TextInput
+          autoCapitalize="none"
+          keyboardType="email-address"
+          onChangeText={[Function]}
+          placeholder="Email"
+          style={
+            [
+              {
+                "borderColor": "#ddd",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "fontSize": 16,
+                "marginBottom": 12,
+                "padding": 12,
+              },
+              {
+                "borderColor": "red",
+              },
+            ]
+          }
+          value=""
+        />
+        <Text
+          style={
+            {
+              "fontSize": 10,
+              "fontWeight": "bold",
+              "marginBottom": 4,
+            }
+          }
+        >
+          Address
+        </Text>
+        <TextInput
+          onChangeText={[Function]}
+          placeholder="Address"
+          style={
+            [
+              {
+                "borderColor": "#ddd",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "fontSize": 16,
+                "marginBottom": 12,
+                "padding": 12,
+              },
+              {
+                "borderColor": "red",
+              },
+            ]
+          }
+          value=""
+        />
+        <Text
+          style={
+            {
+              "fontSize": 10,
+              "fontWeight": "bold",
+              "marginBottom": 4,
+            }
+          }
+        >
+          City
+        </Text>
+        <TextInput
+          onChangeText={[Function]}
+          placeholder="City"
+          style={
+            [
+              {
+                "borderColor": "#ddd",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "fontSize": 16,
+                "marginBottom": 12,
+                "padding": 12,
+              },
+              {
+                "borderColor": "red",
+              },
+            ]
+          }
+          value=""
+        />
+        <Text
+          style={
+            {
+              "fontSize": 10,
+              "fontWeight": "bold",
+              "marginBottom": 4,
+            }
+          }
+        >
+          Postal Code
+        </Text>
+        <TextInput
+          keyboardType="number-pad"
+          onChangeText={[Function]}
+          placeholder="Postal Code"
+          style={
+            [
+              {
+                "borderColor": "#ddd",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "fontSize": 16,
+                "marginBottom": 12,
+                "padding": 12,
+              },
+              {
+                "borderColor": "red",
+              },
+            ]
+          }
+          value=""
+        />
+        <Text
+          style={
+            {
+              "fontSize": 10,
+              "fontWeight": "bold",
+              "marginBottom": 4,
+            }
+          }
+        >
+          Country
+        </Text>
+        <TextInput
+          editable={false}
+          placeholder="Country"
+          style={
+            [
+              {
+                "borderColor": "#ddd",
+                "borderRadius": 4,
+                "borderWidth": 1,
+                "fontSize": 16,
+                "marginBottom": 12,
+                "padding": 12,
+              },
+            ]
+          }
+          value="United States"
+        />
+      </View>
+    </RCTScrollView>
+    <View
+      style={
+        {
+          "backgroundColor": "#f5f5f5",
+          "justifyContent": "flex-end",
+          "marginBottom": 10,
+          "padding": 16,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": false,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#007AFF",
+            "borderRadius": 8,
+            "opacity": 1,
+            "padding": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#fff",
+              "fontSize": 16,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Place Order ($
+          200.00
+          )
+        </Text>
+      </View>
+    </View>
+  </View>,
+  <Text />,
+]
+`;
+
+exports[`Checkout matches snapshot (empty cart) 1`] = `
+[
+  <View
+    style={
+      {
+        "backgroundColor": "#fff",
+        "flex": 1,
+      }
+    }
+  >
+    <Text>
+      Your cart is empty
+    </Text>
+  </View>,
+  <Text />,
+]
+`;

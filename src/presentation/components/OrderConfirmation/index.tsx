@@ -2,20 +2,33 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { format } from 'date-fns';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import React from 'react';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
-import { RootStackParamList } from '../../navigation/types';
+import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 import { SCREENS } from '../../../utils/const';
+import { RootStackParamList } from '../../navigation/types';
+import { clearOrder, selectCurrentOrder } from '../../store/slices/orderSlice';
 
 type OrderConfirmationScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'OrderConfirmationScreen'>;
 
 export default function OrderConfirmationScreen() {
+  const currentOrder = useSelector(selectCurrentOrder);
   const { orderId } = useLocalSearchParams<{ orderId: string }>();
   const navigation = useNavigation<OrderConfirmationScreenNavigationProp>();
-  
-  // In a real app, you would fetch the order details using the orderId
-  const orderDate = new Date();
-  const estimatedDelivery = new Date();
+  const dispatch = useDispatch();
+
+  const orderDate = currentOrder ? new Date(currentOrder.createdAt) : new Date();
+  const estimatedDelivery = new Date(orderDate);
   estimatedDelivery.setDate(orderDate.getDate() + 3);
+
+  const handleContinueShopping = () => {
+    dispatch(clearOrder());
+    navigation.navigate(SCREENS.ProductList);
+  };
+
+  const handleViewOrders = () => {
+    dispatch(clearOrder());
+    Alert.alert('View Orders', 'This would show your order history');
+  };
 
   return (
     <ScrollView style={styles.container}>
@@ -29,7 +42,7 @@ export default function OrderConfirmationScreen() {
           
           <View style={styles.infoRow}>
             <Text style={styles.infoLabel}>Order Number:</Text>
-            <Text style={styles.infoValue}>#{orderId}</Text>
+            <Text style={styles.infoValue}>#{orderId || currentOrder?.id}</Text>
           </View>
           
           <View style={styles.infoRow}>
@@ -45,25 +58,43 @@ export default function OrderConfirmationScreen() {
           <View style={[styles.infoRow, styles.statusContainer]}>
             <Text style={styles.infoLabel}>Status:</Text>
             <View style={styles.statusBadge}>
-              <Text style={styles.statusText}>PROCESSING</Text>
+              <Text style={styles.statusText}>{(currentOrder?.status || 'processing').toUpperCase()}</Text>
             </View>
+          </View>
+        </View>
+        
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>Order Summary</Text>
+          {currentOrder?.items?.length ? (
+            currentOrder.items.map((item, idx) => (
+              <View key={idx} style={styles.infoRow}>
+                <Text style={styles.infoLabel}>{item.name}</Text>
+              </View>
+            ))
+          ) : (
+            <View style={styles.infoRow}>
+              <Text style={styles.infoLabel}>No items</Text>
+            </View>
+          )}
+          <View style={[styles.infoRow, styles.statusContainer]}>
+            <Text style={styles.infoLabel}>Total:</Text>
+            <Text style={styles.infoValue}>
+              {typeof currentOrder?.total === 'number' ? `$${currentOrder.total.toFixed(2)}` : '-'}
+            </Text>
           </View>
         </View>
         
         <View style={styles.actions}>
           <TouchableOpacity 
             style={[styles.button, styles.primaryButton]}
-            onPress={() => navigation.navigate(SCREENS.ProductList)}
+            onPress={handleContinueShopping}
           >
             <Text style={styles.buttonText}>Continue Shopping</Text>
           </TouchableOpacity>
           
           <TouchableOpacity 
             style={[styles.button, styles.secondaryButton]}
-            onPress={() => {
-              // In a real app, this would navigate to the orders screen
-              Alert.alert('View Orders', 'This would show your order history');
-            }}
+            onPress={handleViewOrders}
           >
             <Text style={[styles.buttonText, styles.secondaryButtonText]}>View Orders</Text>
           </TouchableOpacity>
