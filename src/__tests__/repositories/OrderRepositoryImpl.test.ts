@@ -10,7 +10,7 @@ describe('OrderRepositoryImpl', () => {
   // Reset mocks before each test
  beforeEach(() => {
   jest.clearAllMocks();
-  jest.spyOn(console, 'error').mockImplementation(() => {}); // <- добавь это
+  jest.spyOn(console, 'error').mockImplementation(() => {});
   orderRepository = new OrderRepositoryImpl();
 });
 

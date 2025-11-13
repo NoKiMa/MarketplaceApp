@@ -24,7 +24,6 @@ export class ProductRepositoryImpl implements ProductRepository {
   }
 
   async create(item: Omit<Product, 'id' | 'createdAt' | 'updatedAt'>): Promise<ApiResponse<Product>> {
-    // Implementation for create
     throw new Error('Method not implemented.');
   }
 
@@ -32,12 +31,10 @@ export class ProductRepositoryImpl implements ProductRepository {
     id: string,
     item: Partial<Omit<Product, 'id' | 'createdAt' | 'updatedAt'>>
   ): Promise<ApiResponse<Product>> {
-    // Implementation for update
     throw new Error('Method not implemented.');
   }
 
   async delete(id: string): Promise<ApiResponse<boolean>> {
-    // Implementation for delete
     throw new Error('Method not implemented.');
   }
 
@@ -49,7 +46,7 @@ export class ProductRepositoryImpl implements ProductRepository {
     const result = await mockProductApi.getProducts({
       ...filter,
       page: 1,
-      limit: 1000, // High limit to get all matching products
+      limit: 1000,
     });
     return result.data;
   }

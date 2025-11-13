@@ -1,7 +1,6 @@
 import { ProductRepositoryImpl } from '../../data/repositories/ProductRepositoryImpl';
 import { mockProductApi } from '../../data/api/mockProductApi';
 
-// Мокаем mockProductApi
 jest.mock('../../data/api/mockProductApi');
 
 describe('ProductRepositoryImpl', () => {

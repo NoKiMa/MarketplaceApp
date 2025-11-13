@@ -1,4 +1,3 @@
-// src/__tests__/contexts/CartContext.test.tsx
 import React from 'react';
 import { render, renderHook, act } from '@testing-library/react-native';
 import { CartProvider, useCart } from '../../contexts/CartContext';

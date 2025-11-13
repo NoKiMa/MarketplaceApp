@@ -12,7 +12,6 @@ import Cart from '../../presentation/components/Cart';
 import cartReducer from '../../presentation/store/slices/cartSlice';
 import { Text } from 'react-native';
 
-// Add at top of src/__tests__/components/Cart.test.tsx
 jest.mock('react-native/Libraries/Lists/FlatList', () => {
   const React = require('react');
   const RN = jest.requireActual('react-native');
@@ -132,7 +131,7 @@ type Product = {
   rating: number;
   category: string;
   stock: number;
-  quantity: number; // cart item quantity
+  quantity: number;
 };
 
 const makeItem = (overrides: Partial<Product> = {}): Product => ({
@@ -176,7 +175,7 @@ describe('Cart', () => {
     const {toJSON} = renderWithStore([]);
 
     await act(async () => {
-      jest.advanceTimersByTime(500); // пропустить экран загрузки
+      jest.advanceTimersByTime(500);
     });
 
     await waitFor(() =>
@@ -194,7 +193,7 @@ describe('Cart', () => {
     const {toJSON} = renderWithStore(items);
 
     await act(async () => {
-      jest.advanceTimersByTime(500); // пропустить экран загрузки
+      jest.advanceTimersByTime(500);
     });
 
     await waitFor(() => {

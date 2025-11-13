@@ -68,7 +68,8 @@ export default function OrderConfirmationScreen() {
           {currentOrder?.items?.length ? (
             currentOrder.items.map((item, idx) => (
               <View key={idx} style={styles.infoRow}>
-                <Text style={styles.infoLabel}>{item.name}</Text>
+                <Text style={styles.infoLabel}>{item.name} x {item.quantity}</Text>
+                <Text style={styles.infoValue}>{item.price}</Text>
               </View>
             ))
           ) : (

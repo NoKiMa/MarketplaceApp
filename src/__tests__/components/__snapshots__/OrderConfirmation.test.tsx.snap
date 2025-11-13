@@ -296,6 +296,21 @@ exports[`OrderConfirmation matches snapshot (order present with fixed dates) 1`]
             }
           >
             Phone
+             x 
+            2
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#2c3e50",
+                "flex": 1,
+                "fontSize": 16,
+                "fontWeight": "500",
+                "textAlign": "right",
+              }
+            }
+          >
+            100
           </Text>
         </View>
         <View
@@ -317,6 +332,21 @@ exports[`OrderConfirmation matches snapshot (order present with fixed dates) 1`]
             }
           >
             Case
+             x 
+            1
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#2c3e50",
+                "flex": 1,
+                "fontSize": 16,
+                "fontWeight": "500",
+                "textAlign": "right",
+              }
+            }
+          >
+            20
           </Text>
         </View>
         <View

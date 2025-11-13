@@ -1,4 +1,3 @@
-// src/presentation/store/slices/productSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PaginatedResponse, Product, ProductFilter, SortOrder } from '../../../domain/models/Product';
 

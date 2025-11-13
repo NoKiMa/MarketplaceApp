@@ -1,10 +1,10 @@
-import React from 'react';
-import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react-native';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react-native';
+import React from 'react';
 import { Alert } from 'react-native';
+import { Provider } from 'react-redux';
 import OrderConfirmation from '../../presentation/components/OrderConfirmation';
-import orderReducer, { clearOrder } from '../../presentation/store/slices/orderSlice';
+import orderReducer from '../../presentation/store/slices/orderSlice';
 
 // Mock expo-router navigation + params
 const mockNavigate = jest.fn();
@@ -97,8 +97,8 @@ describe('OrderConfirmation', () => {
     expect(screen.getByText(order.status.toUpperCase())).toBeTruthy();
 
     // Items listed
-    expect(screen.getByText('Phone')).toBeTruthy();
-    expect(screen.getByText('Case')).toBeTruthy();
+    expect(screen.getByText(/Phone\s*x\s*2/)).toBeTruthy();
+    expect(screen.getByText(/Case\s*x\s*1/)).toBeTruthy();
   });
 
   it('handles Continue Shopping: clears order and navigates', async () => {

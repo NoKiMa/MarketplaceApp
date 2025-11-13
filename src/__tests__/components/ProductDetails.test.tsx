@@ -143,15 +143,11 @@ describe('ProductDetails', () => {
 
     renderWithStore();
 
-    // Кнопка должна показывать Out of Stock
     await waitFor(() => expect(screen.getByText('Out of Stock')).toBeTruthy());
 
     const callsBefore = (Alert.alert as jest.Mock).mock.calls.length;
-
-    // Пытаемся нажать по тексту на кнопке
     fireEvent.press(screen.getByText('Out of Stock'));
 
-    // Убеждаемся, что Alert не вызван (onPress не сработал из-за disabled)
     await waitFor(() => {
       expect((Alert.alert as jest.Mock).mock.calls.length).toBe(callsBefore);
     });

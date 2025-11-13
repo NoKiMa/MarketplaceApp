@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { SCREENS } from '../src/utils/const';
 
 export default function HomeScreen() {
   const navigation = useNavigation();
@@ -9,7 +10,7 @@ export default function HomeScreen() {
       <Text style={styles.title}>Welcome to Marketplace</Text>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('ProductListScreen')}
+        onPress={() => navigation.navigate(SCREENS.ProductList)}
       >
         <Text style={styles.buttonText}>Browse Products</Text>
       </TouchableOpacity>

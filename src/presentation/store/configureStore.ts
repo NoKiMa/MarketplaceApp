@@ -20,7 +20,6 @@ export const store = configureStore({
     }).concat(sagaMiddleware),
 });
 
-// Then run the root saga
 sagaMiddleware.run(rootSaga);
 
 export type RootState = ReturnType<typeof store.getState>;

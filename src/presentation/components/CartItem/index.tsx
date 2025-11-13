@@ -1,7 +1,8 @@
 import { Ionicons } from '@expo/vector-icons';
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { CartItem as CartItemType } from '../../../domain/models/Product';
+
 interface CartItemProps {
   item: CartItemType;
   onIncrease: (id: string) => void;
@@ -9,50 +10,60 @@ interface CartItemProps {
   onRemove: (id: string) => void;
 }
 
-export const CartItem: React.FC<CartItemProps> = ({
-  item,
-  onIncrease,
-  onDecrease,
-  onRemove,
-}) => {
+const CartItemComponent: React.FC<CartItemProps> = ({ item, onIncrease, onDecrease, onRemove }) => {
+  const imageSource = useMemo(() => ({ uri: item.images[0] }), [item.images]);
+  const isIncreaseDisabled = useMemo(() => item.quantity >= item.stock, [item.quantity, item.stock]);
+
+  const handleIncrease = useCallback(() => onIncrease(item.id), [onIncrease, item.id]);
+  const handleDecrease = useCallback(() => onDecrease(item.id), [onDecrease, item.id]);
+  const handleRemove = useCallback(() => onRemove(item.id), [onRemove, item.id]);
+
   return (
     <View style={styles.container}>
-      <Image source={{ uri: item.images[0] }} style={styles.image} />
+      <Image source={imageSource} style={styles.image} />
       <View style={styles.details}>
         <Text style={styles.name} numberOfLines={2}>
           {item.name}
         </Text>
         <Text style={styles.price}>${item.price.toFixed(2)}</Text>
-        
+
         <View style={styles.quantityContainer}>
-          <TouchableOpacity 
-            onPress={() => onDecrease(item.id)}
-            style={styles.quantityButton}
-          >
+          <TouchableOpacity onPress={handleDecrease} style={styles.quantityButton}>
             <Ionicons name="remove" size={20} color="#333" />
           </TouchableOpacity>
-          
+
           <Text style={styles.quantity}>{item.quantity}</Text>
-          
-          <TouchableOpacity 
-            onPress={() => onIncrease(item.id)}
+
+          <TouchableOpacity
+            onPress={handleIncrease}
             style={styles.quantityButton}
-            disabled={item.quantity >= item.stock}
+            disabled={isIncreaseDisabled}
           >
             <Ionicons name="add" size={20} color="#333" />
           </TouchableOpacity>
         </View>
       </View>
-      
-      <TouchableOpacity 
-        onPress={() => onRemove(item.id)}
-        style={styles.removeButton}
-      >
+
+      <TouchableOpacity onPress={handleRemove} style={styles.removeButton}>
         <Ionicons name="trash-outline" size={20} color="#ff3b30" />
       </TouchableOpacity>
     </View>
   );
 };
+
+export const CartItem = React.memo(
+  CartItemComponent,
+  (prev, next) => {
+    return (
+      prev.item.id === next.item.id &&
+      prev.item.name === next.item.name &&
+      prev.item.price === next.item.price &&
+      prev.item.quantity === next.item.quantity &&
+      prev.item.stock === next.item.stock &&
+      prev.item.images[0] === next.item.images[0]
+    );
+  }
+);
 
 const styles = StyleSheet.create({
   container: {

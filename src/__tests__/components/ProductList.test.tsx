@@ -115,12 +115,9 @@ it('matches snapshot after initial load', async () => {
   it('filters by search query', async () => {
     renderWithStore();
 
-    // дождаться первой загрузки
     await waitFor(() => expect(screen.getByText('Phone')).toBeTruthy());
 
     const input = await screen.findByPlaceholderText('Search products...');
-
-    // следующий вызов API должен вернуть другой набор
     (mockProductApi.getProducts as jest.Mock).mockResolvedValueOnce({
       data: [makeProduct({id: 'ps', name: 'Searched'})],
     });
@@ -139,7 +136,6 @@ it('matches snapshot after initial load', async () => {
   it('opens filter modal and applies category', async () => {
     renderWithStore();
 
-    // дождаться первичного рендера
     await waitFor(() => expect(screen.getByText('Phone')).toBeTruthy());
 
     const filterBtn = await screen.findByText('Filter');

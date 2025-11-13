@@ -1,6 +1,4 @@
-/**
- * Represents a single order item in the system
- */
+
 export interface OrderItem {
   productId: string;
   name: string;
@@ -9,9 +7,6 @@ export interface OrderItem {
   image?: string;
 }
 
-/**
- * Represents the shipping address for an order
- */
 export interface ShippingAddress {
   firstName: string;
   lastName: string;
@@ -22,9 +17,6 @@ export interface ShippingAddress {
   email: string;
 }
 
-/**
- * Represents the status of an order
- */
 export type OrderStatus = 
   | 'pending'
   | 'processing'
@@ -33,9 +25,6 @@ export type OrderStatus =
   | 'cancelled'
   | 'refunded';
 
-/**
- * Represents a complete order in the system
- */
 export interface Order {
   id: string;
   userId: string;
@@ -54,9 +43,6 @@ export interface Order {
   notes?: string;
 }
 
-/**
- * Request payload for creating a new order
- */
 export interface OrderRequest {
   userId: string;
   items: OrderItem[];
@@ -65,18 +51,12 @@ export interface OrderRequest {
   status: OrderStatus;
 }
 
-/**
- * Response when creating a new order
- */
 export interface OrderResponse {
   success: boolean;
   order?: Order;
   error?: string;
 }
 
-/**
- * Parameters for querying orders
- */
 export interface OrderQueryParams {
   userId?: string;
   status?: OrderStatus;
@@ -88,9 +68,6 @@ export interface OrderQueryParams {
   sortOrder?: 'asc' | 'desc';
 }
 
-/**
- * Paginated response for order lists
- */
 export interface PaginatedOrderResponse {
   data: Order[];
   total: number;
@@ -99,9 +76,6 @@ export interface PaginatedOrderResponse {
   totalPages: number;
 }
 
-/**
- * Request payload for updating order status
- */
 export interface UpdateOrderStatusRequest {
   orderId: string;
   status: OrderStatus;
