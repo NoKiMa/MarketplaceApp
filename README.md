@@ -12,6 +12,15 @@ A simple marketplace mobile application built with Expo, React Native, TypeScrip
 
 No environment variables are required.
 
+## Development Conditions
+
+- Development was performed on macOS 13.7.5 (22H527).
+- Node.js v22.14.0 was used.
+- Android Studio Ladybug | 2024.2.1 with an Android emulator: Medium Phone (API 36).
+- Android emulator was used during development. Due to technical reasons, iOS devices/simulators were not available, so iOS was not tested.
+- npm was used to run all commands. In theory, yarn should work as well.
+- No system issues were encountered. No additional constraints beyond those noted above.
+
 ## Getting Started
 
 - **Clone the repository**
